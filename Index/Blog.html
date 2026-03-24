@@ -4,20 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <link rel="stylesheet" href="/Style/ListStyle.css">
+    <link rel="stylesheet" href="/Style/Blog.css">
 </head>
-<body>
-    
-    <main>
+<body>    
+    <div class="container">
         <div class="header">
-            <h1>Blog</h1>
+            <b>Blog</b>
         </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 60%;">Title</th>
+                    <th style="width: 15%;">Date</th>
+                    <th style="width: 25%;">Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!------------------------------------------------------>
+                <tr>
+                    <td>
+                        <a href="">
+                            <span class="file-icon">📄</span>
+                            Post 2
+                        </a>
+                    </td>
+                    <td>25/03/2026</td>
+                    <td>Educational</td>
+                </tr>
+                <!------------------------------------------------------>
+                <tr>
+                    <td>
+                        <a href="">
+                            <span class="file-icon">📄</span>
+                            Post 1
+                        </a>
+                    </td>
+                    <td>24/03/2026</td>
+                    <td>Blog</td>
+                </tr>
+                <!------------------------------------------------------>
+            </tbody>
+        </table>
+    </div>
 
-    </main>
-    <!-- Iserir uma tabela aqui -->
-    <footer>
+
         <button type="button" onclick="location.href='/Index/Index.html'" alt="a button to go back to the homepage">back</button>
-    </footer>
-
 </body>
 </html>

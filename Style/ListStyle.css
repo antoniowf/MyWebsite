@@ -11,3 +11,7 @@ button {
   margin: 0 auto; 
 }
 
+tr {
+    font-size: 25px;
+    text-align: left;
+}

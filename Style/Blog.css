@@ -1,0 +1,87 @@
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            
+            overflow: hidden;
+        }
+        .header {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: 500;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+            font-weight: 500;
+            color: #333;
+            background-color: #fafafa;
+        }
+        td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .icon {
+            width: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .file-icon {
+            color: #8e8e93;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+        .folder-icon {
+            color: #0366d6;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+        .parent {
+            display: flex;
+            align-items: center;
+        }
+        .footer {
+            padding: 10px 20px;
+            color: #6e6e6e;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+        }
+    
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            object-position: center;
+        }
