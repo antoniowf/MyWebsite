@@ -57,3 +57,7 @@ img {
   border-radius: 15px;
   overflow: hidden;
 }
+
+p {
+  text-align: justify;
+}
