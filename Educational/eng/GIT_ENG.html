@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIT</title>
+    <link rel="stylesheet" href="/Style/Style.css">
+    <style>
+        .title {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">GIT</h1>
+        <hr>
+    </header>
+    <main>
+            <!--Table of contents-->
+            <h2>Table of contents</h2>
+            <ul>
+                <li><a href="#instalacao">Installation</a></li>
+                <li><a href="#versionamentodecodigo">Code versioning</a></li>
+                <li><a href="#conceitosbasicos">Basic concepts</a></li>
+                <li><a href="#comandosgit">GIT commands</a></li>
+                <li><a href="#configurandoperfil">Configuring your GIT profile</a></li>
+                <li><a href="#primeirocommit">Making the first commit</a></li>
+            </ul>
+        
+
+        
+        <h2 id="instalacao">Installation</h2>
+            <p>Before we start talking about GIT itself, I should make it clear that I will not cover installing this tool here, as that depends on your operating system and how you want to install it. However, I will leave here a step-by-step guide from GIT itself; you should access this link <a href="https://git-scm.com/install/" target="_blank">git install.</a></p>
+        
+            <h2 id="versionamentodecodigo">Code versioning</h2>
+            <p>GIT is indeed one of the main and most basic tools to master in the development field, due to its essential role and application. GIT in particular stands out for its practicality because it is open source and free, and it can be applied in any scenario, from a small personal project to a large company developing a tool with dozens or even hundreds of developers. But the main question is: what is version control after all? We can compare version control to a time machine, where we can go back when we make a mistake or move forward when we need to; it is a history of files. It was created by the legendary <a href="https://pt.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>, the father of Linux. Its initial application came as a solution for multiple developers to work on the Linux kernel without one code overwriting the other. This is only possible because GIT works with a method that uses branches (ramifications). We can think of a branch as a timeline, and each record on that timeline is called a commit (milestone). Thus, we can create copies of the main timeline and work on them without changing the original product.</p>
+
+            <img style="display: block;margin-left: auto;margin-right: auto;width: 60%;" src="/Images/git_example1.png">
+
+            <p>At this point in the text you may be wondering what GIT has to do with GitHub. They are not the same thing! As explained above, GIT is the <b>tool</b> responsible for versioning, while GitHub is one of the platforms for hosting files and code. It is not the only solution on the market; we also have honorable mentions such as GitLab, Bitbucket, SourceForge, GitKraken, and even self-hosted tools like Gitea and Gogs.</p>
+        
+
+        
+            <h2 id="conceitosbasicos">Basic concepts</h2>
+            <ul>
+                <li><b>Repository:</b> This is the place where your code and your .git history record file will be stored. We commonly call it a folder, but get used to calling it a repository from now on.</li>
+                <li><b>Working Directory:</b> This is where we work locally, for example by editing, deleting, or creating subdirectories.</li>
+                <li><b>Staging area:</b> This is where we prepare the changes to be included in the next commit we will make. It is also possible to select only the desired changes within the Working Directory.</li>
+                <li><b>Commit:</b> This is the record of your project captured at a given moment, saving its current state and the files that were added to the Staging Area. They have an ID followed by a hash; this unique identifier makes it easier to track changes and who made them, facilitating the reversal of changes if they "break" the code in a production environment.</li>
+                <li><b>Branch:</b> This is a branch of the repo (repository). As we saw in the initial example, a branch is used to create new features or work on fixes without affecting the code of the main branch, commonly called <i>main</i> or <i>master</i>.</li>
+                <li><b>Merge:</b> Merge is the joining of two different branches, when we combine the code of one with another. Initially, this will be the hardest part to understand and apply. During a merge, conflicts can happen because two different codes are being combined, for example changes within the same part of a code. In these situations, the merge will not be done automatically, requiring the developer to select which part will enter or leave the project's main code.</li>
+                <li><b>Pull Request:</b> A PR is a request to merge one branch into another. This request is reviewed by other developers working on the same code, helping prevent bugs from reaching production environments, for example.</li>
+            </ul>
+            <hr>
+            <p>I know it may seem confusing for now. Don’t worry: abstracting a concept without practice is indeed harder, but once we start using the terminal, everything will become simpler.</p>
+        
+            <h2 id="comandosgit">GIT commands</h2>
+            <p>GIT can be managed in various ways, through the CLI (Command Line Interface), by integration with VSCode, or even through its GUI (Graphical User Interface). Here we will cover CLI usage because it is the most commonly used method and for didactic reasons, so that you can better understand what is happening.</p>
+
+            <table>
+            <thead>
+            <tr>
+            <th>Command</th>
+            <th>Explanation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><code>git config --global user.name &quot;seu nome&quot;</code></td>
+            <td>This command registers your name in the .config file, so your name will be recorded in each commit.</td>
+            </tr>
+            <tr>
+            <td><code>git config --global user.email &quot;nome@provedor.com&quot;</code></td>
+            <td>As with the name, this saves your email for contact.</td>
+            </tr>
+            <tr>
+            <td><code>git clone</code></td>
+            <td>This command clones a remote repository into the local repository.</td>
+            </tr>
+            <tr>
+            <td><code>git init</code></td>
+            <td>This command creates a .git file, starting tracking in the repository it is in.</td>
+            </tr>
+            <tr>
+            <td><code>git add</code></td>
+            <td>This command will add <b>all</b> the files in the repository to the staging area.</td>
+            </tr>
+            <tr>
+            <td><code>git add NomeDoArquivo.txt</code></td>
+            <td>Unlike the previous one, this adds only the specified file to staging.</td>
+            </tr>
+            <tr>
+            <td><code>git commit -m &quot;mensagem&quot;</code></td>
+            <td>This is the commit command; it saves the changes on the branch followed by a message. The message usually explains which change was made.</td>
+            </tr>
+            <tr>
+            <td><code>git rm NomeDoArquivo.txt</code></td>
+            <td>rm is short for remove; it removes the file from the repository, useful when we do not want to add a file to version control.</td>
+            </tr>
+            <tr>
+            <td><code>git status</code></td>
+            <td>status shows the current state of the branch, which files are being tracked and which are not.</td>
+            </tr>
+            <tr>
+            <td><code>git log</code></td>
+            <td>Displays a history of commits, their hashes, and messages.</td>
+            </tr>
+            <tr>
+            <td><code>git diff</code></td>
+            <td>Shows differences between commits and files.</td>
+            </tr>
+            <tr>
+            <td><code>git branch</code></td>
+            <td>It simply shows which branch we are working on.</td>
+            </tr>
+            <tr>
+            <td><code>git branch new_branch</code></td>
+            <td>Unlike the previous one, here we create a new branch.</td>
+            </tr>
+            <tr>
+            <td><code>git checkout</code></td>
+            <td>checkout is used to switch from one branch to another.</td>
+            </tr>
+            <tr>
+            <td><code>git merge</code></td>
+            <td>This command combines two branches.</td>
+            </tr>
+            <tr>
+            <td><code>git reset --hard HEAD~1</code></td>
+            <td>Undoes the last commit and its changes.</td>
+            </tr>
+            <tr>
+            <td><code>git remote</code></td>
+            <td>remote deals with remote repository handling. When we create a local repository and want to push it to a remote one, we use <code>git remote add origin www.link.com</code> for the remote repository.</td>
+            </tr>
+            <tr>
+            <td><code>git fetch origin</code></td>
+            <td>It brings changes from the remote repository without merging them into our local repository.</td>
+            </tr>
+            <tr>
+            <td><code>git pull</code></td>
+            <td>It fetches changes from the remote repository and combines them with the local repository.</td>
+            </tr>
+            <tr>
+            <td><code>git push</code></td>
+            <td>Sends changes from the local repository to the remote one.</td>
+            </tr>
+            </tbody>
+            </table>
+
+            <p>You will most likely use GitHub as your hosting platform, but if you choose another platform, you are not wrong in any way. For this reason, I will leave only an <a href="https://docs.github.com/pt/get-started/git-basics/set-up-git">official GitHub tutorial</a> on how to configure platform authentication, <i>remembering that you must also create an account.</i> However, here we will keep the examples only for the remote repository.</p>
+
+            <h2 id="configurandoperfil">Configuring your GIT profile</h2>
+
+            <ol>
+                <li>First open your terminal; this will vary depending on your operating system, 
+                    <ul>
+                        <li>On Windows, use Win + R and type CMD</li>
+                        <li>On Mac, press Command (⌘) + Space, type Terminal, and press Enter</li>
+                        <li>Finally on Linux, use Ctrl + Alt + T.</li>
+                    </ul></li>
+                <li>Type <code>git config --global user.name "Your name here"</code>, replacing it with your name.</li>
+                <img src="/Images/git_config01.png">
+                <li>Then type <code>git config --global user.email "your-email@here.com"</code>, and enter your email in that field.</li>
+                <img src="/Images/git_config02.png">
+                <li>To verify that everything is correct, you can use the command <code>git config --list</code>. In the end, you can check that your name and email are saved if you did everything correctly. That is it for now. You can configure other things, but I recommend staying with the basic configuration for the moment.</li>
+                <img src="/Images/git_config03.png">
+            </ol>
+            <h2 id="primeirocommit">Making the first commit</h2>
+            <ol>
+                <li>Create a repository called "Example"; you can create a folder on your desktop or wherever you want.</li>
+                <img src="/Images/git_01.png">
+                <li>Inside the "Example" repository, create a file called "test_git.txt".</li>
+                <img src="/Images/git_02.png">
+                <li>Now we will enter our local repository. Depending on the operating system you are using, this will change, but it is necessary to open the repository through the terminal. Copy the file path and paste it into your terminal using the command <code>cd Example/</code>.</li>
+                <img src="/Images/git_03.png">
+                <li>We will initialize the repository with the command <code>git init</code>.</li>
+                <img src="/Images/git_04.png">
+                <li>Now we will check the state of our branch. For this, we will use the command <code>git status</code>. It will inform us that we are on the <code>main</code> branch and that we still do not have any commits. Below we have the message:<code><pre>
+Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+        test_git.txt
+nothing added to commit but untracked files present (use "git add" to track)</pre></code><br>
+                Here GIT itself is telling us what we should do. <i>It is always important to read what the terminal is telling us</i>; most of the time the solution is there. In this case, we can notice that it is warning us that there are files that are not being tracked, and that we should add them with <code>git add</code> to the staging area so we can make the commit and track that file.</li>
+                <img src="/Images/git_05.png">
+                <li>We will run the command <code>git add .</code> without specifying the test_git.txt file. This way, it will add <b>all</b> the files within that repository. If you use the command <code>git add "test_git.txt"</code>, it is not wrong, but in that situation it would add only the specified file to staging.</li>
+                <img src="/Images/git_06.png">
+                <li>Now that we have added the file to the staging area, we can use <code>git status</code> to check the state of our branch:
+                <code><pre>
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test_git.txt
+                </pre></code><br>
+            Now it tells us that the file test_git.txt is already in the staging area, indicating that there are changes to be <i>committed</i>. In parentheses it also tells us that we can remove the file from the staging area if desired by using the command <code>git rm --cached "file name"</code>, but we will not do that now. 
+                </li>
+                <img src="/Images/git_07.png">
+            <li>With everything ready to make our first commit, we will use the command <code>git commit -m "Initial commit"</code>. This is a convention to always treat the first commit with this message in order to make it easier for the developer to identify it if they need to read the logs.</li>
+                <img src="/Images/git_08.png">
+            <li>Now that you have made your first commit, we can use <code>git status</code> again, just to check the branch state. It is possible to see that there is nothing to commit, we are on the main branch, and the working tree is clean. There is nothing else to do.</li>
+                <img src="/Images/git_09.png">
+            <li>If you want to check the commits made and the existing branches, we can use the command <code>git log</code>. There you can view some information. The first piece of information shown above is the commit hash, which is a unique code made specifically for identification. Below we have the Author, followed by the registered name and email, the date and time the commit was made, and finally the message.</li>
+                <img src="/Images/git_10.png">
+            <li>Now we will do an experiment for testing purposes. Let us add a message inside the file; you can type anything. In my case, I will use a <q>Geeks like to think that they can ignore politics, you can leave politics alone, but politics won't leave you alone</q> quote from <a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>.</li>
+            <li>Next we will use the command <code>git status</code> to check whether anything changed. We can see that GIT has already identified a modification.</li>
+                <img src="/Images/git_11.png">
+            <li>From here on, I will leave it to you to try to solve the following problem. Think, reread the step-by-step guide, and use logic. Remember the process: add to staging → commit.</li>
+                <img src="/Images/git_12.png">
+            </ol>
+
+    </main>
+    <footer style="text-align: center; margin-top: 30px; padding: 20px;">
+    <button onclick="history.back()" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #696969; color: white; border: none; border-radius: 5px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'" title="Go back to the homepage">Back</button>
+    </footer>
+</body>
