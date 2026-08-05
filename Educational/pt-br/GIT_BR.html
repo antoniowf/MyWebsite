@@ -209,6 +209,21 @@ Changes to be committed:
                 <img src="/Images/git_11.png">
                 <li>A partir daqui vou deixar a sua percepção de tentar resolver a problemática a seguir. Pense, releia o passo a passo e utilize a lógica. Lembre-se do processo de Adicionar ao staging → commit.</li>
                 <img src="/Images/git_12.png">
+                <li>Agora vamos experimentar uma coisa diferente dentro do GIT, além da sua função de registrar e monitorar os arquivos como visualizamos anteriormente, vamos imaginar um cenário diferente. Vamos supor que outro desenvolvedor vai realizar uma nova feature adicionando outra frase de outra pessoa. Supondo que esse outro desenvolvedor já usou o comando <code>git clone</code> para ter esse repositório em sua maquina de forma local e já inseriu o texto novo, ele deve usar o comando <code>git checkout -b test</code>, em seguida teremos a mensagem que mudamos para a nova branch test.</li>
+                <img src="/Images/git_14.png">
+                <li>Vamos adicionar o arquivo alterado a área de staging com o <code>git add .</code> em seguida realizar um commit informando que inserimos a nova frase no arquivo, <i>lembre-se que a mensagem do commit deve ser clara e concisa</i>, vamos usar o <code>git commit -m "Inserção de novo bloco de citação"</code></li>
+                <img src="/Images/git_15.png">
+                <p>Nos podemos visualizar a nossas brachs dessa forma, sendo cada uma das esferas na imagem um commit</p>
+                <img style="display: block;margin-left: auto;margin-right: auto;width: 60%;" src="/Images/Untitled Diagram1.drawio.png">
+                <li>Agora, devemos executar os seguintes comandos para <i>mergear</i> as duas branchs:
+                    <ul>
+                        <li>Para fazer o checkout para a branch main (ou master): → <code>git checkout main</code></li>
+                        <li>Para mergear a branch test na branch main → <code>git merge test</code></li>
+                        <img src="/Images/merge.drawio.png">
+                        <img src="/Images/git_16.png">                        
+                    </ul>
+                <p>Feito isso, chegamos ao fim de todo o ciclo da criação de uma nova feature, desde a criação do repositório até a adição dos códigos e merge para a branch principal do projeto.</p>
+                </li>
             </ol>
 
     </main>
