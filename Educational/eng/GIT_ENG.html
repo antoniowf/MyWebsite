@@ -209,6 +209,21 @@ Changes to be committed:
                 <img src="/Images/git_11.png">
             <li>From here on, I will leave it to you to try to solve the following problem. Think, reread the step-by-step guide, and use logic. Remember the process: add to staging → commit.</li>
                 <img src="/Images/git_12.png">
+            <li>Now let's experiment with something different within GIT, beyond its function of recording and monitoring files as we saw previously. Let's imagine a different scenario. Suppose another developer is going to create a new feature by adding another quote from another person. Assuming that this other developer has already used the <code>git clone</code> command to have this repository locally on their machine and has already inserted the new text, they should use the command <code>git checkout -b test</code>, and then we will have the message showing that we switched to the new test branch.</li>
+                <img src="/Images/git_14.png">
+            <li>Let's add the modified file to the staging area with <code>git add .</code> and then make a commit indicating that we inserted the new quote in the file. <i>Remember that the commit message should be clear and concise</i>. We'll use <code>git commit -m "Add new block of quotes"</code></li>
+                <img src="/Images/git_15.png">
+            <p>We can visualize our branches this way, where each sphere in the image represents a commit</p>
+                <img style="display: block;margin-left: auto;margin-right: auto;width: 60%;" src="/Images/Untitled Diagram1.drawio.png">
+            <li>Now, we must execute the following commands to <i>merge</i> the two branches:
+                <ul>
+                    <li>To checkout to the main branch (or master): → <code>git checkout main</code></li>
+                    <li>To merge the test branch into the main branch → <code>git merge test</code></li>
+                    <img src="/Images/merge.drawio.png">
+                    <img src="/Images/git_16.png">                        
+            </ul>
+                <p>Once this is done, we have reached the end of the entire cycle of creating a new feature, from the creation of the repository to the addition of the code and merging it into the main branch of the project.</p>
+            </li>
             </ol>
 
             <h2>Recommended reading:</h2>
